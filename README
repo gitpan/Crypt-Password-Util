@@ -1,0 +1,25 @@
+NAME
+    Crypt::Password::Util - Crypt password utilities
+
+VERSION
+    version 0.01
+
+SYNOPSIS
+     use Crypt::Password::Util qw(looks_like_crypt);
+     say looks_like_crypt('$6$4DdvgCFk$...');            # 1
+     say looks_like_crypt('$1$$GmbL3iXOMZR57QuGDLv.L1'); # 1
+     say looks_like_crypt('foo');                        # 0
+
+FUNCTIONS
+  looks_like_crypt($str) => BOOL
+    Return true if $str looks like a crypted password.
+
+AUTHOR
+    Steven Haryanto <stevenharyanto@gmail.com>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2012 by Steven Haryanto.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+

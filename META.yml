@@ -1,0 +1,22 @@
+---
+abstract: 'Crypt password utilities'
+author:
+  - 'Steven Haryanto <stevenharyanto@gmail.com>'
+build_requires:
+  Module::Build: 0.3601
+  Test::More: 0.98
+configure_requires:
+  Module::Build: 0.3601
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 4.300006, CPAN::Meta::Converter version 2.113640'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Crypt-Password-Util
+requires:
+  perl: 5.010001
+resources:
+  homepage: http://metacpan.org/dist/Crypt-Password-Util
+  repository: http://github.com/sharyanto/perl-Crypt-Password-Util
+version: 0.01
