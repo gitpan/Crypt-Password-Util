@@ -4,7 +4,7 @@ use 5.010;
 use strict;
 use warnings;
 
-our $VERSION = '0.07'; # VERSION
+our $VERSION = '0.08'; # VERSION
 
 use Exporter;
 our @ISA = qw(Exporter);
@@ -34,7 +34,7 @@ sub crypt_type {
 sub looks_like_crypt { !!crypt_type($_[0]) }
 
 sub crypt {
-    require UUID::Random;
+    require UUID::Random::Patch::UseMRS;
     require Digest::MD5;
 
     my $pass = shift;
@@ -70,7 +70,7 @@ Crypt::Password::Util - Crypt password utilities
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 SYNOPSIS
 
