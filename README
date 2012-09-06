@@ -2,13 +2,15 @@ NAME
     Crypt::Password::Util - Crypt password utilities
 
 VERSION
-    version 0.01
+    version 0.02
 
 SYNOPSIS
      use Crypt::Password::Util qw(looks_like_crypt);
-     say looks_like_crypt('$6$4DdvgCFk$...');            # 1
-     say looks_like_crypt('$1$$GmbL3iXOMZR57QuGDLv.L1'); # 1
-     say looks_like_crypt('foo');                        # 0
+
+     say looks_like_crypt('$1$$...');               # 1
+     say looks_like_crypt('$apr1$4DdvgCFk$...');    # 1
+     say looks_like_crypt('$6$4DdvgCFk$...');       # 1
+     say looks_like_crypt('foo');                   # 0
 
 FUNCTIONS
   looks_like_crypt($str) => BOOL
