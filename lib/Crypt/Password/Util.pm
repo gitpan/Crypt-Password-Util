@@ -4,7 +4,7 @@ use 5.010;
 use strict;
 use warnings;
 
-our $VERSION = '0.04'; # VERSION
+our $VERSION = '0.05'; # VERSION
 
 use Exporter;
 our @ISA = qw(Exporter);
@@ -16,7 +16,7 @@ my $hexd = qr![0-9a-f]!;
 sub crypt_type {
     local $_ = shift;
 
-    return "CRYPT"     if /\A $b64d {13} \z/ox;
+    return "CRYPT"     if /\A .. $b64d {11} \z/ox;
 
     return "MD5-CRYPT" if /\A \$ (?:apr)?1 \$ $b64d {0,8} \$ $b64d {22} \z/ox;
 
@@ -46,13 +46,13 @@ Crypt::Password::Util - Crypt password utilities
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 
  use Crypt::Password::Util qw(crypt_type looks_like_crypt);
 
- say crypt_type('62F4a6/89.12z');                    # CRYPT (13 base64 digits)
+ say crypt_type('62F4a6/89.12z');                    # CRYPT
  say crypt_type('$1$$...');                          # MD5-CRYPT
  say crypt_type('$apr1$4DdvgCFk$...');               # MD5-CRYPT
  say crypt_type('$5$4DdvgCFk$...');                  # SSHA256
