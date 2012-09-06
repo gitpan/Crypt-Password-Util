@@ -15,8 +15,9 @@ meta-spec:
   version: 1.4
 name: Crypt-Password-Util
 requires:
+  UUID::Random: 0
   perl: 5.010001
 resources:
   homepage: http://metacpan.org/dist/Crypt-Password-Util
   repository: http://github.com/sharyanto/perl-Crypt-Password-Util
-version: 0.05
+version: 0.06

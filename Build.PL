@@ -18,12 +18,13 @@ my %module_build_args = (
     "Steven Haryanto <stevenharyanto\@gmail.com>"
   ],
   "dist_name" => "Crypt-Password-Util",
-  "dist_version" => "0.05",
+  "dist_version" => "0.06",
   "license" => "perl",
   "module_name" => "Crypt::Password::Util",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
+    "UUID::Random" => 0,
     "perl" => "5.010001"
   },
   "script_files" => []
