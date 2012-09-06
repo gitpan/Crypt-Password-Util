@@ -2,7 +2,7 @@ NAME
     Crypt::Password::Util - Crypt password utilities
 
 VERSION
-    version 0.03
+    version 0.04
 
 SYNOPSIS
      use Crypt::Password::Util qw(crypt_type looks_like_crypt);
