@@ -4,6 +4,7 @@ author:
   - 'Steven Haryanto <stevenharyanto@gmail.com>'
 build_requires:
   Module::Build: 0.3601
+  Sort::Versions: 0
   Test::More: 0.98
 configure_requires:
   Module::Build: 0.3601
@@ -20,4 +21,4 @@ requires:
 resources:
   homepage: http://metacpan.org/dist/Crypt-Password-Util
   repository: http://github.com/sharyanto/perl-Crypt-Password-Util
-version: 0.06
+version: 0.07

@@ -32,6 +32,7 @@
       },
       "test" : {
          "requires" : {
+            "Sort::Versions" : 0,
             "Test::More" : "0.98"
          }
       }
@@ -43,6 +44,6 @@
          "url" : "http://github.com/sharyanto/perl-Crypt-Password-Util"
       }
    },
-   "version" : "0.06"
+   "version" : "0.07"
 }
 
