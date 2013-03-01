@@ -2,7 +2,7 @@ NAME
     Crypt::Password::Util - Crypt password utilities
 
 VERSION
-    version 0.08
+    version 0.09
 
 SYNOPSIS
      use Crypt::Password::Util qw(crypt_type looks_like_crypt crypt);
@@ -36,11 +36,15 @@ FUNCTIONS
     not supported by system, fall back to MD5-CRYPT with 32-bit random salt.
     If that is not supported, fall back to CRYPT.
 
+SEE ALSO
+    Authen::Passphrase which recognizes more encodings (but currently not
+    SSHA256 and SSHA512).
+
 AUTHOR
     Steven Haryanto <stevenharyanto@gmail.com>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2012 by Steven Haryanto.
+    This software is copyright (c) 2013 by Steven Haryanto.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.

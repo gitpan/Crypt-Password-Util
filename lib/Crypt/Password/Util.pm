@@ -4,7 +4,7 @@ use 5.010;
 use strict;
 use warnings;
 
-our $VERSION = '0.08'; # VERSION
+our $VERSION = '0.09'; # VERSION
 
 use Exporter;
 our @ISA = qw(Exporter);
@@ -25,6 +25,10 @@ sub crypt_type {
 
     # salted SHA512, supported by glibc 2.7+
     return "SSHA512"   if /\A \$ 6 \$ $b64d {0,16} \$ $b64d {86} \z/ox;
+
+    # passphrase scheme based on Blowfish, designed by Niels Provos and David
+    # Mazieres for OpenBSD. 22 b64-digits salt + 31 digits hash
+    return "BCRYPT" if /\A \$ 2a? \$ \d+ \$ $b64d {53} \z/ox;
 
     return "PLAIN-MD5" if /\A $hexd {32} \z/ox;
 
@@ -70,7 +74,7 @@ Crypt::Password::Util - Crypt password utilities
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 SYNOPSIS
 
@@ -109,13 +113,18 @@ random salt. Will first choose SSHA512 with 64-bit random salt. If not supported
 by system, fall back to MD5-CRYPT with 32-bit random salt. If that is not
 supported, fall back to CRYPT.
 
+=head1 SEE ALSO
+
+L<Authen::Passphrase> which recognizes more encodings (but currently not SSHA256
+and SSHA512).
+
 =head1 AUTHOR
 
 Steven Haryanto <stevenharyanto@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Steven Haryanto.
+This software is copyright (c) 2013 by Steven Haryanto.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
